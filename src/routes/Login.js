@@ -1,7 +1,7 @@
 //import utilities
 import { useEffect } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 //import helper
 import setDocumentTitle from '../helper/document-title'
 import callToaster from "../helper/callToaster";

@@ -16,6 +16,7 @@ import MemberDetails from './routes/MemberDetails';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <Switch>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/" element={<Navigate to="/Login" />} />
@@ -26,9 +27,10 @@ root.render(
         <Route path="ClaimList" element={<ClaimList />} />
         <Route path="ClaimList/:claimId" element={<ClaimDetails />} />
         <Route path="Search/:memberId" element={<MemberDetails />} />
-        <Route path="*" element={<NotFound />}/>
+        <Route element={<NotFound />}/>
       </Route>
     </Routes>
+  </Switch>
   </BrowserRouter>);
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Switch, Routes, Route, Navigate } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';

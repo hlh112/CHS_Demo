@@ -65,13 +65,13 @@ export default function Login(props) {
     useEffect(() => {
         const elem = document.querySelector('#loginPage')
         elem?elem.addEventListener('keydown', (event) => {
-            if(event.code === 'Enter' && event.path[0].value.trim() !== '') {
+            if(event.key === 'Enter' && event.path[0].value.trim() !== '') {
                     props.onSubmit(event.path[0].value)
                     event.path[0].value=''
                     navigate('../' + 'Dashboard')
                     event.stopPropagation()
     
-            } if (event.code === 'Enter' && event.path[0].value.trim() === '') {
+            } if (event.key === 'Enter' && event.path[0].value.trim() === '') {
                 callToaster('red', 'You can enter something randomly :)')
             }
         }) : console.log('no elem');

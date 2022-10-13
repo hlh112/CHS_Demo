@@ -26,7 +26,7 @@ root.render(
         <Route path="ClaimList" element={<ClaimList />} />
         <Route path="ClaimList/:claimId" element={<ClaimDetails />} />
         <Route path="Search/:memberId" element={<MemberDetails />} />
-        <Route element={<NotFound />}/>
+        <Route path='*' element={<NotFound />}/>
       </Route>
     </Routes>
   </BrowserRouter>);

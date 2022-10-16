@@ -413,7 +413,7 @@ export default function ClaimForms(props) {
                                 <form>
                                     <FormFieldWrapper>
                                         <Label for='paymentType' text='Payment Type' />
-                                        <Select id='paymentType' required={true} allOptions={selectOptions.PaymentType} onChange={e => setPaymentType(e.target.value)} />
+                                        <Select id='paymentType' required={true} allOptions={selectOptions.PaymentType} value={paymentType} onChange={e => setPaymentType(e.target.value)} />
                                     </FormFieldWrapper>
                                     <FormFieldWrapper>
                                         <Label for='valuedAmount' text='Valuated Amount' />

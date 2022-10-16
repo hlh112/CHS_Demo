@@ -111,8 +111,6 @@ export default function ClaimList() {
     useEffect(() => {
         const elems = document.querySelectorAll('[data-label]')
         const listings = document.querySelectorAll('tbody tr')
-
-        setClaimsNumber(listings.length)
         
         elems.forEach(elem => {
             const tagValue = elem.getAttribute('data-tag')
@@ -124,17 +122,9 @@ export default function ClaimList() {
                 elem.classList.remove('active')
             }
         })
-    }, [statusFilter, marketFilter])
 
-    //handle table empty state
-    useEffect(() => {
-        const emptyState = document.querySelector('.empty-state')
-        if (claimsNumber === 0) {
-            emptyState.style.display = 'block'
-        } else {
-            emptyState.style.display = 'none'
-        }
-    }, [claimsNumber])
+        setClaimsNumber(listings.length)
+    }, [statusFilter, marketFilter])
     
     //Claim Creator Handling
     const openClaimCreator = () => {
@@ -162,6 +152,7 @@ export default function ClaimList() {
     })
 
     //page composition
+    
     return <>
         <PageContentWrapper>
             <PageHead text='Claims'/>
@@ -172,7 +163,6 @@ export default function ClaimList() {
                 <FilterChip attrs={filterAttrs} data={claims} onToggleFilter={toggleFilter} />
             </FlexWrapper>
             <TableUI headers={tableHeads} data={newClaimsData} />
-            <EmptyState class="empty-state" text="There's no matching result" />
         </PageContentWrapper>
         <ClaimCreator class='claimCreator' onCreatClaim={createClaim} trigger='#claimCreatorTrigger' />
         <Toaster />

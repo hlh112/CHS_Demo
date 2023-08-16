@@ -67,7 +67,8 @@ export default function Login(props) {
         elem?elem.addEventListener('keydown', (event) => {
             if(event.key === 'Enter') {
                     console.log(event.path)
-                    console.log(event.composedPath(0).value)
+                    console.log(event.composedPath())
+                    console.log(event.composedPath([0]).value)
                     console.log(event)
                     //props.onSubmit(event.path[0].value)
                     //event.path[0].value=''

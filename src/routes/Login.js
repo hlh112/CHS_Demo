@@ -66,10 +66,10 @@ export default function Login(props) {
         const elem = document.querySelector('#loginPage')
         elem?elem.addEventListener('keydown', (event) => {
             if(event.key === 'Enter') {
-                    console.log(event.path)
                     console.log(event.composedPath())
-                    console.log(event.composedPath([0]).value)
-                    console.log(event)
+                    const pathArray ＝ composedPath()
+                    console.log(pathArray[0])
+                    console.log(composedPath()[0])
                     //props.onSubmit(event.path[0].value)
                     //event.path[0].value=''
                     navigate('../' + 'Dashboard')

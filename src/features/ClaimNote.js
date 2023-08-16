@@ -124,8 +124,8 @@ export default function ClaimNote(props) {
         document.querySelector('#leftSideModal')?.getElementsByTagName('textarea')[0]?.addEventListener('keydown', (event) => {
             if(event.code === 'Enter' && event.metaKey) {
                     event.preventDefault();
-                    pushNote(event.path[0].value)
-                    event.path[0].value=''
+                    pushNote(event.composedPath()[0].value)
+                    event.composedPath()[0].value=''
     
             } else if (event.code === 'Enter' && !event.shiftKey){}
         })
